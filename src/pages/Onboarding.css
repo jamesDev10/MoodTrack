@@ -1,0 +1,121 @@
+.onboarding-content {
+  --background: #ffffff;
+}
+
+.onboarding-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.skip-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: #667eea;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 10;
+  padding: 10px 15px;
+}
+
+.onboarding-swiper {
+  flex: 1;
+  width: 100%;
+  padding: 60px 20px 20px;
+}
+
+.slide-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.slide-emoji {
+  font-size: 120px;
+  margin-bottom: 40px;
+  animation: floatAnimation 3s ease-in-out infinite;
+}
+
+.slide-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin: 0 0 20px 0;
+  max-width: 300px;
+}
+
+.slide-description {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+  max-width: 320px;
+  margin: 0;
+}
+
+.button-container {
+  padding: 20px;
+  padding-bottom: 40px;
+}
+
+.action-button {
+  --background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --background-hover: linear-gradient(135deg, #5568d3 0%, #66408a 100%);
+  --border-radius: 12px;
+  --padding-top: 16px;
+  --padding-bottom: 16px;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.5px;
+}
+
+/* Estilos para los puntos de paginación de Swiper */
+.onboarding-swiper .swiper-pagination {
+  bottom: 120px !important;
+}
+
+.onboarding-swiper .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #ddd;
+  opacity: 1;
+}
+
+.onboarding-swiper .swiper-pagination-bullet-active {
+  background: #667eea;
+  width: 24px;
+  border-radius: 5px;
+}
+
+@keyframes floatAnimation {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Responsive */
+@media (max-width: 375px) {
+  .slide-emoji {
+    font-size: 100px;
+  }
+  
+  .slide-title {
+    font-size: 24px;
+  }
+  
+  .slide-description {
+    font-size: 14px;
+  }
+}

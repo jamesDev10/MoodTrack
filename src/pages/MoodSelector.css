@@ -1,0 +1,206 @@
+.mood-selector-content {
+  --background: linear-gradient(135deg, #f5f7fa 0%, #e8ebf0 100%);
+}
+
+.mood-selector-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.mood-header {
+  flex: 0 0 auto;
+  margin-bottom: 20px;
+}
+
+.illustration {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.illustration-svg {
+  width: 100%;
+  height: auto;
+}
+
+.mood-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px 0;
+  max-width: 400px;
+  margin: 0 auto;
+  width: 100%;
+  align-content: center;
+}
+
+.mood-option {
+  background: white;
+  border: none;
+  border-radius: 20px;
+  padding: 0;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.mood-option:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(108, 92, 231, 0.3);
+}
+
+.mood-option:active {
+  transform: translateY(-2px);
+}
+
+.mood-emoji {
+  font-size: 48px;
+  line-height: 1;
+}
+
+.back-button-container {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.back-button {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  color: #6C5CE7;
+}
+
+.back-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(108, 92, 231, 0.3);
+}
+
+/* Confirmation view */
+.confirmation-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.confirmation-header {
+  flex: 0 0 auto;
+  margin-bottom: 30px;
+}
+
+.confirmation-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background: white;
+  border-radius: 30px;
+  padding: 40px;
+  margin: 0 auto;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.selected-emoji {
+  font-size: 120px;
+  line-height: 1;
+  animation: bounceIn 0.6s ease-out;
+}
+
+.selected-name {
+  font-size: 32px;
+  font-weight: 600;
+  color: #2d3748;
+  text-align: center;
+}
+
+.confirmation-actions {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.confirm-button {
+  --background: #FFD93D;
+  --background-hover: #FFC700;
+  --background-activated: #FFB800;
+  --color: #2d3748;
+  --border-radius: 15px;
+  --padding-top: 16px;
+  --padding-bottom: 16px;
+  font-weight: 600;
+  font-size: 18px;
+  text-transform: none;
+  box-shadow: 0 4px 12px rgba(255, 217, 61, 0.4);
+}
+
+.cancel-button {
+  --color: #6C5CE7;
+  --border-radius: 15px;
+  --padding-top: 16px;
+  --padding-bottom: 16px;
+  font-weight: 600;
+  font-size: 18px;
+  text-transform: none;
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 375px) {
+  .mood-grid {
+    gap: 15px;
+  }
+
+  .mood-emoji {
+    font-size: 40px;
+  }
+
+  .selected-emoji {
+    font-size: 100px;
+  }
+
+  .selected-name {
+    font-size: 28px;
+  }
+}

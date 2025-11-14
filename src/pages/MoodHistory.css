@@ -1,0 +1,169 @@
+.mood-history-content {
+  --background: #f5f7fa;
+}
+
+.history-container {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.history-group {
+  margin-bottom: 24px;
+}
+
+.history-date-header {
+  font-size: 13px;
+  font-weight: 700;
+  color: #6C5CE7;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.history-item {
+  background: white;
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.history-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(108, 92, 231, 0.2);
+}
+
+.history-item:active {
+  transform: translateY(0);
+}
+
+.history-item-emoji {
+  font-size: 48px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.history-item-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.history-item-name {
+  font-size: 17px;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 4px;
+}
+
+.history-item-notes {
+  font-size: 14px;
+  color: #718096;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.history-item-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.history-item-time {
+  font-size: 13px;
+  color: #a0aec0;
+  font-weight: 500;
+}
+
+.history-item-arrow {
+  font-size: 20px;
+  color: #cbd5e0;
+  transform: rotate(180deg);
+}
+
+/* Empty State */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.empty-emoji {
+  font-size: 80px;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+.empty-state h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 8px;
+}
+
+.empty-state p {
+  font-size: 16px;
+  color: #718096;
+  margin-bottom: 24px;
+}
+
+.add-mood-button {
+  --background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --background-hover: linear-gradient(135deg, #5568d3 0%, #66408a 100%);
+  --border-radius: 25px;
+  --padding-start: 32px;
+  --padding-end: 32px;
+  --padding-top: 14px;
+  --padding-bottom: 14px;
+  font-weight: 600;
+  text-transform: none;
+  box-shadow: 0 4px 12px rgba(108, 92, 231, 0.4);
+}
+
+/* Header customization */
+ion-header ion-toolbar {
+  --background: white;
+  --border-width: 0;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+}
+
+ion-header ion-title {
+  font-weight: 700;
+  font-size: 20px;
+  color: #2d3748;
+}
+
+ion-header ion-button {
+  --color: #2d3748;
+}
+
+/* Responsive adjustments */
+@media (max-width: 375px) {
+  .history-item {
+    padding: 14px;
+    gap: 12px;
+  }
+
+  .history-item-emoji {
+    font-size: 40px;
+  }
+
+  .history-item-name {
+    font-size: 16px;
+  }
+
+  .history-item-notes {
+    font-size: 13px;
+  }
+}

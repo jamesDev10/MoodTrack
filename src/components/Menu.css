@@ -1,0 +1,199 @@
+/* Ajuste de ancho del menú para móvil */
+ion-menu {
+  --width: 260px;
+  --max-width: 260px;
+}
+
+/* Menu Header */
+.menu-header ion-toolbar {
+  --background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --border-width: 0;
+  --padding-top: 16px;
+  --padding-bottom: 16px;
+  --min-height: 120px;
+}
+
+.menu-header-content {
+  text-align: center;
+  padding: 16px 12px 12px;
+}
+
+.menu-logo {
+  font-size: 48px;
+  line-height: 1;
+  margin-bottom: 8px;
+  animation: menuLogoFloat 3s ease-in-out infinite;
+}
+
+.menu-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: white;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  padding: 0;
+  margin: 0;
+}
+
+.menu-subtitle {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 6px 0 0 0;
+  font-weight: 400;
+}
+
+@keyframes menuLogoFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Menu Content */
+.menu-content {
+  --background: #f5f7fa;
+}
+
+.menu-list {
+  background: transparent;
+  padding: 12px 8px;
+}
+
+.menu-list ion-item {
+  --background: white;
+  --border-radius: 12px;
+  --padding-start: 12px;
+  --padding-end: 12px;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+  --inner-padding-end: 0;
+  margin-bottom: 8px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  min-height: 52px;
+}
+
+.menu-list ion-item:hover {
+  transform: translateX(3px);
+  box-shadow: 0 3px 10px rgba(108, 92, 231, 0.2);
+}
+
+.menu-list ion-item.selected {
+  --background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 3px 12px rgba(108, 92, 231, 0.4);
+}
+
+.menu-list ion-item.selected ion-icon {
+  color: white;
+}
+
+.menu-list ion-item.selected ion-label h2 {
+  color: white;
+  font-weight: 700;
+}
+
+.menu-list ion-icon {
+  font-size: 22px;
+  color: #6C5CE7;
+  margin-right: 12px;
+  transition: all 0.3s ease;
+}
+
+.menu-list ion-label h2 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0;
+  transition: all 0.3s ease;
+  line-height: 1.4;
+}
+
+.menu-list ion-label p {
+  font-size: 12px;
+  color: #718096;
+  margin: 2px 0 0 0;
+  transition: all 0.3s ease;
+  line-height: 1.3;
+}
+
+/* Menu Footer */
+.menu-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  text-align: center;
+  background: transparent;
+}
+
+.version-text {
+  font-size: 11px;
+  color: #a0aec0;
+  margin: 0 0 3px 0;
+  font-weight: 500;
+}
+
+.copyright-text {
+  font-size: 10px;
+  color: #cbd5e0;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Responsive adjustments */
+@media (max-width: 375px) {
+  ion-menu {
+    --width: 240px;
+    --max-width: 240px;
+  }
+
+  .menu-logo {
+    font-size: 44px;
+  }
+
+  .menu-title {
+    font-size: 20px;
+  }
+
+  .menu-list ion-item {
+    --padding-start: 10px;
+    --padding-end: 10px;
+    min-height: 48px;
+  }
+
+  .menu-list ion-icon {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+
+  .menu-list ion-label h2 {
+    font-size: 14px;
+  }
+}
+
+/* Ajuste adicional para pantallas muy pequeñas */
+@media (max-width: 320px) {
+  ion-menu {
+    --width: 220px;
+    --max-width: 220px;
+  }
+
+  .menu-header ion-toolbar {
+    --min-height: 110px;
+  }
+
+  .menu-logo {
+    font-size: 40px;
+  }
+
+  .menu-title {
+    font-size: 18px;
+  }
+
+  .menu-list ion-label h2 {
+    font-size: 13px;
+  }
+}

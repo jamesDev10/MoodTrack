@@ -1,7 +1,7 @@
 {
-  "name": "MoodTrack",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "react-vite"
+	"name": "MoodTrack",
+	"integrations": {
+		"capacitor": {}
+	},
+	"type": "react"
 }

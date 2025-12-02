@@ -77,7 +77,7 @@ const Statistics: React.FC = () => {
               <IonIcon icon={chevronBack} />
             </IonButton>
           </IonButtons>
-          <IonTitle>Statistics</IonTitle>
+          <IonTitle>Estadísticas</IonTitle>
         </IonToolbar>
       </IonHeader>
 
@@ -94,8 +94,8 @@ const Statistics: React.FC = () => {
               interface="popover"
               className="period-select"
             >
-              <IonSelectOption value="week">This Week</IonSelectOption>
-              <IonSelectOption value="month">This Month</IonSelectOption>
+              <IonSelectOption value="week">Esta Semana</IonSelectOption>
+              <IonSelectOption value="month">Este Mes</IonSelectOption>
             </IonSelect>
           </div>
 

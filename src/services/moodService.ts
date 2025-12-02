@@ -131,8 +131,8 @@ export const moodService = {
 
       // Calcular porcentajes
       const total = filteredEntries.length;
-      const happyMoods = ['happy', 'excited', 'calm'];
-      const sadMoods = ['sad'];
+      const happyMoods = ['happy', 'excited', 'calm', 'motivated', 'relaxed'];
+      const sadMoods = ['sad', 'angry', 'tired'];
       const neutralMoods = ['neutral'];
 
       const happyCount = filteredEntries.filter(e => happyMoods.includes(e.emojiId)).length;
@@ -178,9 +178,13 @@ export const moodService = {
 
       const emojiValues: Record<string, number> = {
         'sad': 1,
-        'neutral': 2,
-        'calm': 3,
-        'happy': 4,
+        'angry': 1.5,
+        'tired': 1.8,
+        'neutral': 2.5,
+        'calm': 3.5,
+        'relaxed': 3.8,
+        'happy': 4.2,
+        'motivated': 4.5,
         'excited': 5
       };
 

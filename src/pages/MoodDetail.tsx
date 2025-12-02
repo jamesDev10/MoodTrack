@@ -8,7 +8,8 @@ import {
   IonButtons,
   IonButton,
   IonIcon,
-  IonTextarea
+  IonTextarea,
+  IonToast
 } from '@ionic/react';
 import { chevronBack } from 'ionicons/icons';
 import { useHistory, useParams } from 'react-router-dom';
@@ -26,6 +27,9 @@ const MoodDetail: React.FC = () => {
   const [moodEntry, setMoodEntry] = useState<MoodEntryWithEmoji | null>(null);
   const [notes, setNotes] = useState('');
   const [loading, setLoading] = useState(true);
+  const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState('');
+  const [toastColor, setToastColor] = useState<'success' | 'danger'>('success');
 
   useEffect(() => {
     loadMoodEntry();
@@ -43,8 +47,26 @@ const MoodDetail: React.FC = () => {
 
   const handleSave = async () => {
     if (moodEntry) {
-      await moodService.updateMoodEntry(moodEntry.id, notes);
-      history.push('/history');
+      try {
+        const success = await moodService.updateMoodEntry(moodEntry.id, notes);
+        if (success) {
+          setToastMessage('Notas actualizadas correctamente');
+          setToastColor('success');
+          setShowToast(true);
+          setTimeout(() => {
+            history.push('/history');
+          }, 500);
+        } else {
+          setToastMessage('Error al actualizar las notas');
+          setToastColor('danger');
+          setShowToast(true);
+        }
+      } catch (error) {
+        console.error('Error updating mood entry:', error);
+        setToastMessage('Error al actualizar. Intenta nuevamente');
+        setToastColor('danger');
+        setShowToast(true);
+      }
     }
   };
 
@@ -60,11 +82,11 @@ const MoodDetail: React.FC = () => {
             <IonButtons slot="start">
               <IonButton onClick={() => history.push('/history')}>
                 <IonIcon icon={chevronBack} />
-              </IonButton>
-            </IonButtons>
-            <IonTitle>History</IonTitle>
-          </IonToolbar>
-        </IonHeader>
+            </IonButton>
+          </IonButtons>
+          <IonTitle>Historial</IonTitle>
+        </IonToolbar>
+      </IonHeader>
         <IonContent className="mood-detail-content">
           <div className="loading-container">
             <div className="loading-spinner"></div>
@@ -83,7 +105,7 @@ const MoodDetail: React.FC = () => {
               <IonIcon icon={chevronBack} />
             </IonButton>
           </IonButtons>
-          <IonTitle>History</IonTitle>
+          <IonTitle>Historial</IonTitle>
         </IonToolbar>
       </IonHeader>
 
@@ -112,18 +134,26 @@ const MoodDetail: React.FC = () => {
               expand="block"
               onClick={handleSave}
             >
-              Save
+              Guardar
             </IonButton>
             <IonButton
               className="cancel-button-detail"
               expand="block"
               onClick={handleCancel}
             >
-              Cancel
+              Cancelar
             </IonButton>
           </div>
         </div>
       </IonContent>
+      <IonToast
+        isOpen={showToast}
+        onDidDismiss={() => setShowToast(false)}
+        message={toastMessage}
+        duration={2000}
+        color={toastColor}
+        position="bottom"
+      />
     </IonPage>
   );
 };
